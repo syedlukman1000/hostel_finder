@@ -1,0 +1,94 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #ECF3F8;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    background-color: #0B6EB4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.nav_links{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3%;
+}
+
+.nav_links a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.logo{
+    margin-left: 3%;
+    color: white;
+    font-family: 'Marck Script', cursive;
+    font-size: x-large;
+    
+}
+
+.outerbox{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    
+}
+
+.detailsbox{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: white;
+    box-shadow: 0 0px 10px rgb(0 0 0 / 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.reviewsbox{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: white;
+    box-shadow: 0 0px 10px rgb(0 0 0 / 0.2);
+    padding: 3%;
+    height: 500px;
+    overflow: scroll;
+}
+.reviewsbox::-webkit-scrollbar{
+    width: 5px;
+}
+
+.reviewsbox::-webkit-scrollbar-thumb {
+    background:  #0B6EB4;
+  }
+
+.details{
+    padding: 50px;
+}
+
+.pricingarea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+footer{
+    background-color: #0B6EB4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    margin-top: 100px;
+    float: bottom;
+}

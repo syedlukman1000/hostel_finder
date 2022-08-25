@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('./successpartial') %>
+    <%- include('./errorpartial') %>
+    <nav>
+        <div class="logo">
+            <p style="margin-bottom: 0px;">
+                way to hostel
+            </p>
+        </div>
+        <div class="nav_links">
+            <% if (user) { %>
+            <a href="/" style="margin-right: 50px;">Home</a>
+            <a href="/browsehostels" style="margin-right: 50px;">Browse Hostels</a>
+            <a href="/signout">sign out</a>
+            <% } else { %>
+            <a href="/" style="margin-right: 50px;">Home</a>
+            <a href="/browsehostels" style="margin-right: 50px;">Browse Hostels</a>
+            <a href="/signin" style="margin-right: 50px;">sign in</a>
+            <a href="/signup" style="margin-right: 50px;">sign up</a>
+            <a href="/addhostel">add hostel</a>
+            <% } %>
+
+        </div>
+    </nav>
+
+
+    <div class="background">
+        <div class="top_layer">
+            <p style="color: white; width: 40%; text-align: center;font-size: 17px;line-height: 30px;">Find your next
+                hostel from your
+                home. Choose from
+                various hostels with
+                affordable
+                rents. Also share your
+                review of hostel
+                to help others find best hostel.
+            </p>
+
+            <a href="/browsehostels" class="button">Browse Hostels</a>
+        </div>
+    </div>
+
+    <div class="features">
+
+        <h2 style="padding-bottom: 30px;">F E A T U R E S</h2>
+
+        <div class="infeatures">
+
+            <div class="feabox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                    class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1z" />
+                </svg>
+                <p style="font-weight: 500;font-size: 17px;text-align: center;margin-top: 10px;margin-bottom: 0px;">
+                    Designed for Everyone</p>
+            </div>
+            <div class="feabox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                    class="bi bi-egg-fill" viewBox="0 0 16 16">
+                    <path d="M14 10a6 6 0 0 1-12 0C2 5.686 5 0 8 0s6 5.686 6 10z" />
+                </svg>
+                <p style="font-weight: 500;font-size: 17px;text-align: center;margin-top: 10px;margin-bottom: 0px;">
+                    Delicious Food</p>
+            </div>
+
+            <div class="feabox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                    class="bi bi-cash-coin" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
+                    <path
+                        d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z" />
+                    <path
+                        d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z" />
+                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
+                </svg>
+                <p style="font-weight: 500;font-size: 17px;text-align: center;margin-top: 10px;margin-bottom: 0px;">
+                    Affordable Rents</p>
+            </div>
+
+
+
+            <div class="feabox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+                <p style="font-weight: 500;font-size: 17px;text-align: center;margin-top: 10px;margin-bottom: 0px;">
+                    Awesome Maintainance</p>
+            </div>
+        </div>
+    </div>
+    <div
+        style="display: flex;align-items: center;width: 100%;justify-content: center;padding-top: 50px;padding-bottom: 50px;">
+        <div style="background-color: #0B6EB4;height: 1.5px;width: 70%;text-align: center;"></div>
+    </div>
+
+    <div class="features">
+        <h2 style="font-size: 30px;padding-bottom: 30px;">Recommended Hostels</h2>
+        <div class="infeatures">
+            <div class="hostelbox">
+                <img src='images/<%-hostels[0].imageurl%>'
+                    style="width: 50%; height: 100%;border-top-left-radius: 10px;border-bottom-left-radius: 10px;"
+                    alt="">
+                <div class="details">
+                    <h2><%= hostels[0].name %></h2>
+                    <p style="color: green; margin: 0px;"><%= hostels[0].share4 %> onwards</p>
+                    <p><%= hostels[0].district %>, <%= hostels[0].state %>, <%= hostels[0].pincode %>.</p>
+
+                    <a href="/details/<%=hostels[0].email%> "><button class="button" style="margin-top: 10px;">View
+                            Details</button></a>
+                </div>
+            </div>
+
+            <div class="hostelbox">
+                <img src='images/<%-hostels[1].imageurl%> '
+                    style="width: 50%; height: 100%;border-top-left-radius: 10px;border-bottom-left-radius: 10px;"
+                    alt="">
+                <div class="details">
+                    <h2><%= hostels[1].name %></h2>
+                    <p style="color: green; margin: 0px;"><%= hostels[1].share4 %> onwards</p>
+                    <p><%= hostels[1].district %>, <%= hostels[0].state %>, <%= hostels[1].pincode %>.</p>
+
+                    <a href="/details/<%=hostels[1].email%> "><button class="button" style="margin-top: 10px;">View
+                            Details</button></a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    <footer>
+        <h2 style="color: white;font-size: large;margin-bottom: 0px;font-weight: 700;">Way to Hostel @ 2022</h2>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/details.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('./successpartial') %>
+    <%- include('./errorpartial') %>
+    <nav>
+        <div class="logo">
+            <p style="padding: 0%;margin: 0px;">
+                way to hostel
+            </p>
+        </div>
+        <div class="nav_links">
+            <% if (user) { %>
+            <a href="/" style="margin-right: 50px;">Home</a>
+            <a href="/browsehostels" style="margin-right: 50px;">Browse Hostels</a>
+            <a href="/signout">sign out</a>
+            <% } else { %>
+            <a href="/" style="margin-right: 50px;">Home</a>
+            <a href="/browsehostels" style="margin-right: 50px;">Browse Hostels</a>
+            <a href="/signin" style="margin-right: 50px;">sign in</a>
+            <a href="/signup" style="margin-right: 50px;">sign up</a>
+            <a href="/addhostel">add hostel</a>
+            <% } %>
+
+        </div>
+    </nav>
+
+
+    <div class="outerbox">
+        <div class="detailsbox">
+            <img src="/images/<%-details[0].imageurl%>" alt="" style="width: 100%;height: auto;border-top-left-radius: 20px;
+            border-top-right-radius: 20px;">
+
+            <div class="details">
+
+                <div>
+                    <h2 style="font-size: 40px;color:  #0B6EB4;"><%=details[0].name%></h2>
+                    <div
+                        style="display: flex;flex-direction: row;align-items: center;margin-top: 20px;margin-bottom: 20px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                        </svg>
+                        <p style="margin: 0px;margin-left: 10px;"><%=details[0].email%> </p>
+                    </div>
+                    <div style="display: flex;flex-direction: row;align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-geo-alt" viewBox="0 0 16 16">
+                            <path
+                                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                        <p style="margin: 0px;margin-left: 10px;"><%=details[0].town%>, <%=details[0].district%>,
+                            <%=details[0].state%>,
+                            <%=details[0].pincode%>.
+                        </p>
+                    </div>
+
+
+                </div>
+                <div class="pricingarea">
+                    <div style="border-right: solid 2px grey;padding: 5%;">
+                        <h3 style="font-size: medium;font-weight: 800;">4 Sharing</h3>
+                        <h3 style="color: green;"><%=details[0]['share4']%></h3>
+                    </div>
+                    <div style="border-right: solid 2px grey;padding: 5%;">
+                        <h3 style="font-size: medium;font-weight: 800;">3 Sharing</h3>
+                        <h3 style="color: green;"><%=details[0]['3share']%></h3>
+                    </div>
+                    <div style="border-right: solid 2px grey;padding: 5%;">
+                        <h3 style="font-size: medium;font-weight: 800;">2 Sharing</h3>
+                        <h3 style="color: green;"><%=details[0]['2share']%></h3>
+                    </div>
+                    <div style="padding: 5%;">
+                        <h3 style="font-size: medium;font-weight: 800;">1 Sharing</h3>
+                        <h3 style="color: green;"><%=details[0]['1share']%></h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="reviewsbox">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Add Review
+            </button>
+            <div class="reviewsall" style="margin-top: 15px;">
+                <%for(var i=0;i<reviews.length;i++){%>
+                <div style="border-bottom: 1px solid grey;padding-top:10px;padding-bottom: 10px;">
+                    <div style="display: flex;flex-direction: row;align-items: center;margin-bottom: 7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                        </svg>
+                        <p style="font-weight: 600;margin: 0px; margin-left: 5px;"><%=reviews[i].useremail%></p>
+                    </div>
+
+                    <p style="color:goldenrod;font-weight: 600;margin: 0px; padding-left: 25px;font-size: medium;">
+                        <%=reviews[i].rating%>/5
+                    </p>
+                    <p style="margin:0px;padding-left: 25px;font-size: small;"><%=reviews[i].review%></p>
+
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Review</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/addreview/<%=details[0].email%> " method="POST">
+                        <input type="text" class="form-control" name="review" placeholder="review"
+                            style="margin-bottom:20px;">
+                        <input type="number" name="rating" class="form-control" placeholder="rating"
+                            style="margin-bottom: 20px;">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h2 style="color: white;font-size: large;margin-bottom: 0px;font-weight: 700;">Way to Hostel @ 2022</h2>
+    </footer>
+
+</body>
+
+</html>

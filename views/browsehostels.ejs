@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/browsehostels.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('./successpartial') %>
+    <%- include('./errorpartial') %>
+    <nav>
+        <div class="logo">
+            <p style="padding: 0%;margin: 0px;">
+                way to hostel
+            </p>
+        </div>
+        <div class="nav_links">
+            <% if (user) { %>
+            <a href="/" style="margin-right: 50px;">Home</a>
+            <a href="/browsehostels" style="margin-right: 50px;">Browse Hostels</a>
+            <a href="/signout">sign out</a>
+            <% } else { %>
+            <a href="/" style="margin-right: 50px;">Home</a>
+            <a href="/browsehostels" style="margin-right: 50px;">Browse Hostels</a>
+            <a href="/signin" style="margin-right: 50px;">sign in</a>
+            <a href="/signup" style="margin-right: 50px;">sign up</a>
+            <a href="/addhostel">add hostel</a>
+            <% } %>
+
+        </div>
+    </nav>
+
+    <div class="form">
+        <form action="/browsehostels" method="get">
+            <input type="text" name="pincode" style="margin-right: 20px;">
+            <button type="submit" class="search">Search</button>
+        </form>
+    </div>
+
+
+    <div class="features">
+        <div class="infeatures">
+            <%if(hostels.length==0){%>
+            <p style="color: red;">no hostels found</p>
+            <%}%>
+            <%for(var i=0;i<hostels.length;i++){%>
+
+
+            <div class="hostelbox">
+                <img src='images/<%-hostels[i].imageurl%>'
+                    style="width: 50%; height: 100%;border-top-left-radius: 10px;border-bottom-left-radius: 10px;"
+                    alt="">
+                <div class="details">
+                    <h2><%= hostels[i].name %></h2>
+                    <p style="color: green; margin: 0px;"><%= hostels[i].share4 %> onwards</p>
+                    <p><%= hostels[0].district %>, <%= hostels[i].state %>, <%= hostels[i].pincode %>.</p>
+
+                    <a href="/details/<%=hostels[i].email%> "><button class="button" style="margin-top: 10px;">View
+                            Details</button></a>
+                </div>
+            </div>
+
+            <%} %>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #ECF3F8;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    background-color: #0B6EB4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.nav_links{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3%;
+}
+
+.nav_links a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.logo{
+    margin-left: 3%;
+    color: white;
+    font-family: 'Marck Script', cursive;
+    font-size: x-large;
+}
+
+.background{
+    background-image: url('http://localhost:3000/images1/background.jpg');
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  height: 600px;
+}
+
+.top_layer{
+    background-color: rgba(0,0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.button{
+    background-color: #0B6EB4;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+
+}
+
+.features{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.feabox{
+        background-color: white;
+        border-radius: 10px;
+        height: 170px;
+        width: 190px;
+        box-shadow: 0 0px 10px rgb(0 0 0 / 0.2);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+
+}
+
+.infeatures{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.hostelbox{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+    height: 250px;
+    width: 500px;
+    box-shadow: 0 0px 10px rgb(0 0 0 / 0.2);
+    align-items: center;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+footer{
+    background-color: #0B6EB4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    margin-top: 100px;
+    float: bottom;
+}
